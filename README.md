@@ -36,11 +36,11 @@ Se você tem algo conflitante com localhost ou porta 8765, você pode dizer ao c
 
     Isto irá disponibilizar sua aplicação em http://192.168.13.37:5673/
 
-#Instalação
+# Instalação
 
 https://book.cakephp.org/3.0/pt/installation.html
 
-#Guia de Início Rápido
+# Guia de Início Rápido
 
 https://book.cakephp.org/3.0/pt/quickstart.html
 
