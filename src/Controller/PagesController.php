@@ -26,6 +26,13 @@ use Cake\View\Exception\MissingTemplateException;
  *
  * @link https://book.cakephp.org/3.0/en/controllers/pages-controller.html
  */
+/**
+ * Produtos Controller
+ *
+ * @property \App\Model\Table\ProdutosTable $Produtos
+ *
+ * @method \App\Model\Entity\Produto[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ */
 class PagesController extends AppController
 {
 
@@ -40,6 +47,8 @@ class PagesController extends AppController
      */
     public function display(...$path)
     {
+
+
         $count = count($path);
         if (!$count) {
             return $this->redirect('/');
@@ -58,6 +67,9 @@ class PagesController extends AppController
         $this->set(compact('page', 'subpage'));
 
         try {
+            return $this->redirect('/produtos/telaInicial');
+
+
             $this->render(implode('/', $path));
         } catch (MissingTemplateException $exception) {
             if (Configure::read('debug')) {
@@ -65,5 +77,8 @@ class PagesController extends AppController
             }
             throw new NotFoundException();
         }
+
     }
+
+
 }
