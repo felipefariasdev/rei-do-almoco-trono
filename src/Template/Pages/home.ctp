@@ -89,8 +89,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         <h4>Outras opções</h4>
         <ul>
 
-            <li class="bullet problem">Opção x</li>
-            <li class="bullet problem">Opção y</li>
+            <li class="bullet problem">Opção x <a href="#">selecionar</a></li>
+            <li class="bullet problem">Opção y <a href="#">selecionar</a></li>
         </ul>
     </div>
     <hr />
