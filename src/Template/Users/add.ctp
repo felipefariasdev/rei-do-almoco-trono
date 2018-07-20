@@ -3,7 +3,7 @@
     <fieldset>
         <legend><?= __('Novo usuário') ?></legend>
         <?php
-        echo $this->Form->control('Nome Completo');
+        echo $this->Form->control('name', array('label'=>'Nome Completo'));
             echo $this->Form->control('email');
             echo $this->Form->control('password', array('label'=>'Senha'));
         echo $this->Form->control('password_confirm', array('label'=>'Confirmar Senha'));

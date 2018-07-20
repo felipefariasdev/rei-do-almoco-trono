@@ -17,6 +17,10 @@
     <h3><?= h($user->id) ?></h3>
     <table class="vertical-table">
         <tr>
+            <th scope="row"><?= __('Name') ?></th>
+            <td><?= h($user->name) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Email') ?></th>
             <td><?= h($user->email) ?></td>
         </tr>
