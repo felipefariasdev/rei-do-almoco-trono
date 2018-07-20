@@ -2,7 +2,9 @@
     
     Objetivo principal é deixar no trono a opção de maior relevância para os consumidores.
 
-    https://mm.tt/1124927426?t=NMdv69PFTi
+    Mapa mental: https://mm.tt/1124927426?t=NMdv69PFTi
+    
+    Tarefas: https://trello.com/b/Q88T02AO
 
 # CakePHP 3.6.7 (Requisitos)
 
