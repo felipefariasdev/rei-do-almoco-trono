@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/">REI DE HOJE <span class="sr-only">REI DE HOJE</span></a>
+                <a class="nav-link" href="/produtos/telaInicial">REI DE HOJE <span class="sr-only">REI DE HOJE</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/users/add">NÃO SOU REGISTRADO</a>
@@ -21,7 +21,7 @@
         <div class="navbar-nav mt-2 mt-md-0">
             <ul>
             <li class="nav-item">
-                <a class="nav-link" href="/">LOGOUT</a>
+                <a class="nav-link" href="/users/logout">LOGOUT</a>
             </li>
             <ul/>
         </div>

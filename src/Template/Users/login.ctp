@@ -1,12 +1,6 @@
-<div class="users form large-9 medium-8 columns content">
-    <?= $this->Form->create($user) ?>
-    <fieldset>
-        <legend><?= __('Login') ?></legend>
-        <?php
-            echo $this->Form->control('email');
-            echo $this->Form->control('password',array('label'=>'Senha'));
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Entrar')) ?>
-    <?= $this->Form->end() ?>
-</div>
+<h1>Login</h1>
+<?= $this->Form->create() ?>
+<?= $this->Form->input('email') ?>
+<?= $this->Form->input('password') ?>
+<?= $this->Form->button('Login') ?>
+<?= $this->Form->end() ?>

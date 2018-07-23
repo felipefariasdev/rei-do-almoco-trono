@@ -13,6 +13,45 @@ use App\Controller\AppController;
 class UsersController extends AppController
 {
 
+    public function beforeFilter(\Cake\Event\Event $event)
+    {
+        $this->Auth->allow(['add','index','logout','add']);
+    }
+
+    public function isAuthorized($user)
+    {
+        $action = $this->request->params['action'];
+
+        // As ações add e index são permitidas sempre.
+        if (in_array($action, ['index', 'add'])) {
+            return true;
+        }
+
+
+
+        // Todas as outras ações requerem um id.
+        if (!$this->request->getParam('pass.0')) {
+            return false;
+        }
+
+
+        $id = $this->request->getParam('pass.0');
+        $user = $this->Users->get($id);
+
+        if ($user->id) {
+
+            // As ações não permitidas
+            if (in_array($action, ['votar'])) {
+                return true;
+            }else{
+                return true;
+            }
+
+        }
+        return parent::isAuthorized($user);
+    }
+
+
     /**
      * Index method
      *
@@ -51,12 +90,12 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
+            $user->id = $this->Auth->user('id');
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
-
+                $this->Flash->success('Salvo com sucesso!');
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+            $this->Flash->error('Erro ao tentar salvar.');
         }
         $this->set(compact('user'));
     }
@@ -68,17 +107,19 @@ class UsersController extends AppController
      */
     public function login()
     {
-        $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
-            $user = $this->Users->patchEntity($user, $this->request->getData());
-            if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
+            $user = $this->Auth->identify();
+            if ($user) {
+                $this->Auth->setUser($user);
+                return $this->redirect($this->Auth->redirectUrl());
             }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+            $this->Flash->error('Email e senha não estão registrados.');
         }
-        $this->set(compact('user'));
+    }
+
+    public function logout()
+    {
+        return $this->redirect($this->Auth->logout());
     }
 
     /**

@@ -1,15 +1,3 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Produto[]|\Cake\Collection\CollectionInterface $produtos
- */
-?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-
-        <?= $this->Html->link(__('Novo'), ['action' => 'add']) ?>
-    </ul>
-</nav>
 <div class="produtos index large-9 medium-8 columns content">
     <h3><?= __('Produtos') ?></h3>
     <table cellpadding="0" cellspacing="0">
@@ -29,8 +17,8 @@
 
                 <td class="actions">
 
-                    <?= $this->Html->link(__('Alterar'), ['action' => 'edit', $produto->id]) ?>
-                    <?= $this->Form->postLink(__('Excluir'), ['action' => 'delete', $produto->id], ['confirm' => __('Tem certeza que deseja excluir?', $produto->id)]) ?>
+                    <?= $this->Html->link(__('Votar'), ['action' => 'votar', $produto->id]) ?>
+
                 </td>
             </tr>
             <?php endforeach; ?>

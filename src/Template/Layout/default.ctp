@@ -26,7 +26,7 @@
 
 
 <?= $this->element('navbarfixedtop') ?>
-
+<?= $this->Flash->render('auth') ?>
 
 
     <?= $this->Flash->render() ?>

@@ -2,16 +2,43 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-
+use App\Model\Entity\User;
+use Cake\Event\Event;
 /**
  * Produtos Controller
  *
  * @property \App\Model\Table\ProdutosTable $Produtos
+ * @property \App\Model\Table\UsersTable $Users
  *
  * @method \App\Model\Entity\Produto[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class ProdutosController extends AppController
 {
+
+    public function beforeFilter(\Cake\Event\Event $event)
+    {
+
+        // métodos permitidos
+        $this->Auth->allow(['add','index','telaInicial']);
+
+    }
+
+    public function isAuthorized($user)
+    {
+        $action = $this->request->params['action'];
+
+        // As ações que não são permitidas sempre.
+        if (in_array($action, ['delete','edit'])) {
+            return false;
+        }
+
+        // Ações permitidas somente se estiver logado.
+        if (in_array($action, ['votar'])) {
+            return true;
+        }
+
+        return parent::isAuthorized($user);
+    }
 
     /**
      * Index method
@@ -102,6 +129,11 @@ class ProdutosController extends AppController
             $this->Flash->error(__('The produto could not be saved. Please, try again.'));
         }
         $this->set(compact('produto'));
+    }
+
+    public function votar($id = null)
+    {
+
     }
 
     /**

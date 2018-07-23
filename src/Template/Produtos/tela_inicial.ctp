@@ -1,6 +1,6 @@
 <div class="container">
     <p><br />
-        <a class="btn btn-lg btn-primary" href="#" role="button">QUERO VOTAR &raquo;</a>
+        <a class="btn btn-lg btn-primary" href="/produtos" role="button">QUERO VOTAR &raquo;</a>
     </p>
     <div class="jumbotron">
         <h1>O REI DE HOJE É O <STRONG><?php echo $produto->name?></STRONG></h1>
