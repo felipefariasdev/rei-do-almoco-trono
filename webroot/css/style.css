@@ -406,7 +406,8 @@ fieldset legend {
 }
 
 button {
-    background: #966600;
+    background: #5cb85c;
+    border-radius: 5px;
 }
 
 div.message {
@@ -482,6 +483,7 @@ div.message.hidden {
 .container {
     overflow: hidden;
     min-height: 92%; /* full height almost always */
+    margin-top: 5px;
 }
 
 /* Force equal height by overflowing */
@@ -521,4 +523,16 @@ div.message.hidden {
 table td {
     vertical-align: top;
     word-break: break-all;
+}
+
+.nav-item-menu{
+    color: #c5c5c5;
+    margin-top: 3px;
+    margin-right: -25px;
+}
+
+.btn-success {
+    color: #292b2c!important;
+    background-color: #5cb85c!important;
+    border-color: #5cb85c!important;
 }

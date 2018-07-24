@@ -57,9 +57,14 @@ class AppController extends Controller
             'unauthorizedRedirect' => $this->referer()
         ]);
 
+        $this->set('usuario',$this->Auth->user());
+
         // Permite a ação display, assim nosso pages controller
         // continua a funcionar.
         $this->Auth->allow(['display']);
+
+
+
     }
 
     public function isAuthorized($user)

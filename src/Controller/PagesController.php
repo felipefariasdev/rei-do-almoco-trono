@@ -51,7 +51,7 @@ class PagesController extends AppController
 
         $count = count($path);
         if (!$count) {
-            return $this->redirect('/');
+            return $this->redirect('/produtos/telaInicial');
         }
         if (in_array('..', $path, true) || in_array('.', $path, true)) {
             throw new ForbiddenException();
@@ -67,6 +67,7 @@ class PagesController extends AppController
         $this->set(compact('page', 'subpage'));
 
         try {
+
             return $this->redirect('/produtos/telaInicial');
 
 

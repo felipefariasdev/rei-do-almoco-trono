@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20-Jul-2018 às 18:26
+-- Generation Time: 24-Jul-2018 às 12:14
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -85,8 +85,37 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `created`, `modified`) VALUES
-(1, 'felipe', 'felipe@gmail.com', '123', '2018-07-20 14:46:28', '2018-07-20 14:46:28'),
-(2, 'gica', 'giane@gmail.com', '234', '2018-07-20 14:46:44', '2018-07-20 14:46:44');
+(4, 'felipe rodrigues farias', 'felipe.rodrigues.dev@gmail.com', '$2y$10$KtiAl88QszGexorqdKq1D.0wdcmoKqsmGltF2tON6NvY9KZvlUWGO', '2018-07-23 17:02:41', '2018-07-23 17:02:41'),
+(5, 'giane', 'giane@gmail.com', '$2y$10$UHESJHgFUIO52Pz.vXm.jOSPt7fUXTLoZ/eEEEOgOotRPDLHqDk2y', '2018-07-24 06:40:23', '2018-07-24 06:40:23'),
+(6, 'flavio', 'flavio@gmail.com', '$2y$10$.Emi8p2Sa.YKC0tX1SaMK.Nk8c1/J/Ozfb9UlLrTKUfBbDZdpkoCu', '2018-07-24 06:44:09', '2018-07-24 06:44:09'),
+(7, 'manu', 'manu@gmail.com', '$2y$10$xkMOv7GTt33OVfmlg5yXse7ZU2wClSoSkml86I.B.wpq0LXL101Yq', '2018-07-24 07:00:26', '2018-07-24 07:00:26'),
+(8, 'SELMA', 'selma@gmail.com', '$2y$10$7clgpfpTNBazPpNqvy45YOW3Wrehpjaztczioq.09rpEJOKM67kBO', '2018-07-24 07:41:41', '2018-07-24 07:41:41'),
+(9, 'gustavo', 'gustavo@gmail.com', '$2y$10$7CDBhsPXqEOLRuA3udrmVO.WRLxqfnzGJtFa07oEHdh7I.rHQVCti', '2018-07-24 08:50:37', '2018-07-24 08:50:37'),
+(10, 'Cristiana Mello', 'cris@gmail.com', '$2y$10$yoU4LgqAsEL75jQCgV7fn.BwozdAuYcfRbV/zGcGKLMnVou37I/iK', '2018-07-24 09:19:34', '2018-07-24 09:19:34');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `votos`
+--
+
+CREATE TABLE `votos` (
+  `id` int(11) NOT NULL,
+  `users_id` int(11) NOT NULL,
+  `produtos_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `votos`
+--
+
+INSERT INTO `votos` (`id`, `users_id`, `produtos_id`) VALUES
+(20, 4, 2),
+(22, 6, 5),
+(24, 5, 7),
+(35, 7, 2),
+(38, 8, 2),
+(39, 9, 5);
 
 --
 -- Indexes for dumped tables
@@ -105,6 +134,13 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `votos`
+--
+ALTER TABLE `votos`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_id` (`users_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -118,7 +154,13 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `votos`
+--
+ALTER TABLE `votos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

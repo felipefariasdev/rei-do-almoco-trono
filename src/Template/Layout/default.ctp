@@ -21,20 +21,20 @@
 
     <!-- Custom styles for this template -->
     <link href="https://v4-alpha.getbootstrap.com/examples/navbar-top-fixed/navbar-top-fixed.css" rel="stylesheet">
+
+    <?= $this->Html->css('style.css') ?>
+    <?= $this->Html->css('home.css') ?>
+
 </head>
 <body>
-
-
-<?= $this->element('navbarfixedtop') ?>
-<?= $this->Flash->render('auth') ?>
-
-
-    <?= $this->Flash->render() ?>
-
-
-
-
+<div class="container">
+    <?= $this->element('top') ?>
+</div>
+    <div class="container">
+        <?= $this->Flash->render('auth') ?>
+        <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
+    </div>
 
         <!-- Bootstrap core JavaScript
     ================================================== -->

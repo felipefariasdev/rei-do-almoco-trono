@@ -1,12 +1,12 @@
-<div class="produtos index large-9 medium-8 columns content">
-    <h3><?= __('Produtos') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+<div class="container">
+    <h2><?= __('PRODUTOS') ?></h2>
+    <table class="table table-striped">
         <thead>
             <tr>
 
-                <th scope="col"><?= $this->Paginator->sort('name','Nome do Produto') ?></th>
+                <th><?= $this->Paginator->sort('name','NOME') ?></th>
 
-                <th scope="col" class="actions"></th>
+                <th class="actions"></th>
             </tr>
         </thead>
         <tbody>
@@ -17,7 +17,7 @@
 
                 <td class="actions">
 
-                    <?= $this->Html->link(__('Votar'), ['action' => 'votar', $produto->id]) ?>
+                    <strong><?= $this->Html->link(__('Votar'), ['action' => 'votar', $produto->id]) ?></strong>
 
                 </td>
             </tr>
@@ -27,9 +27,7 @@
     <div class="paginator">
         <ul class="pagination">
 
-            <span>  <?= $this->Paginator->prev('< ' . __('anterior')) ?></span>
-            &nbsp;  - &nbsp;
-            <span>  <?= $this->Paginator->next(__('próximo') . ' >') ?></span>
+            <span>  <?= $this->Paginator->prev('< ' . __('anterior')) ?><?= $this->Paginator->next(__('próximo') . ' >') ?></span>
 
         </ul>
         <p><?= $this->Paginator->counter(['format' => __('Pagina atual <strong>{{page}}</strong> - total de páginas <strong>{{pages}}</strong>, total de registros <strong>{{count}}</strong>')]) ?></p>
