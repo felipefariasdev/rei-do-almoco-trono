@@ -1,10 +1,12 @@
 # Rei do Almoço (Trono)
     
-    Objetivo principal é deixar no trono a opção de maior relevância para os consumidores.
-
     Mapa mental: https://mm.tt/1124927426?t=NMdv69PFTi
     
     Tarefas: https://trello.com/b/Q88T02AO
+    
+    Configuração da conexão: config/app.php
+    
+    Importar Banco de dados: database/rei-do-almoco-trono.sql
 
 # CakePHP 3.6.7 (Requisitos)
 
@@ -31,21 +33,3 @@ Uma instalação de desenvolvimento é o método mais rápido de configurar o Ca
     bin/cake server
 
     Por padrão, sem nenhum argumento fornecido, isso vai disponibilizar a sua aplicação em http://localhost:8765/.
-
-Se você tem algo conflitante com localhost ou porta 8765, você pode dizer ao console CakePHP para executar o servidor web em um host e/ou porta específica utilizando os seguintes argumentos:
-
-    bin/cake server -H 192.168.13.37 -p 5673
-
-    Isto irá disponibilizar sua aplicação em http://192.168.13.37:5673/
-
-# Instalação
-
-https://book.cakephp.org/3.0/pt/installation.html
-
-# Guia de Início Rápido
-
-https://book.cakephp.org/3.0/pt/quickstart.html
-
-# Tutorial - Criando um Blog - Parte 1
-
-https://book.cakephp.org/3.0/pt/tutorials-and-examples/blog/blog.html
